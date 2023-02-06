@@ -20,9 +20,7 @@ int main(int numArg, char* v[]) {
         unsigned i= 0;
         unsigned j = 0;
         while (i < numeros) {
-            // cout << "Entro en bucle 1; i=" << i<<endl;
             while(j < 10 && i < numeros) {
-                // cout << "Entro en bucle 2; j=" << j<<endl;
                 cout << setw(8) << randInt(inicial, final);
                 j++;
                 i++;
