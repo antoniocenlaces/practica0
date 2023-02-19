@@ -1,28 +1,28 @@
 #include <iostream>
 #include <iomanip>
 #include <ctime>
-#include <cstdlib>
+// #include <cstdlib>
 
 using namespace std;
-//Pre: a < b
-//Post: randInt(a,b)= α ∧ α ∊ [a, b]
-int randInt(const int a, const int b) {
-    return a + rand() % (b - a +1);
+//Pre: r,r ∊ R ∧ r < s
+//Post: randInt(r,s)= α ∧ α ∊ [r, s]
+double randDouble(const double r, const double s) {
+    return  double(rand()) / RAND_MAX * (s - r);
 }
 
 int main(int numArg, char* v[]) {
     if (numArg == 4){
         srand(time(nullptr));
         int numeros = atoi(v[1]);
-        int inicial = atoi(v[2]);
-        int final = atoi(v[3]);
+        double inicial = atof(v[2]);
+        double final = atof(v[3]);
         // cout << "De nuevo Numeros: " << numeros << " Inicial: " << inicial << " final: " << final << " args: " << numArg << endl;
         // cout << "Prueba de randInt " << randInt(inicial, final) << endl;
         unsigned i= 0;
         unsigned j = 0;
         while (i < numeros) {
             while(j < 10 && i < numeros) {
-                cout << setw(8) << randInt(inicial, final);
+                cout << setw(9) << fixed << setprecision(3) << randDouble(inicial, final);
                 j++;
                 i++;
             }
@@ -34,5 +34,4 @@ int main(int numArg, char* v[]) {
     {
         return 1;
     }
-    
 }
