@@ -29,6 +29,7 @@ void muestraVector(int valores[], const int numeros){
             j = 0;
         }
         // Muestra los 20 últimos
+        // Primero verifica si el vector tiene más de 20 posiciones
         if ((numeros - 20) > 0) {
             i = numeros - 20;
             j = 0;
