@@ -58,6 +58,7 @@ void generaVector(int valores[], const int numeros, const int inicial,
 int main(int numArg, char* v[]) {
     if (numArg == 4){
         srand(time(nullptr));
+        // cout << "CLOCKS_PER_SEC: " << CLOCKS_PER_SEC << endl;
         int numeros = atoi(v[1]); // Primer argumento: número de elementos a presentar
         int inicial = atoi(v[2]); // Valor inferior del intervalo
         int final = atoi(v[3]);   // Valor superior del intervalo
@@ -72,8 +73,8 @@ int main(int numArg, char* v[]) {
 
         cout << endl;
         cout << "El tiempo empleado en la ordenación ha sido de "
-                << fixed << setprecision(5) << double(ticksFinal - ticksInicial) / CLOCKS_PER_SEC
-                << "s" << endl;
+                << fixed << setprecision(5) << double(ticksFinal - ticksInicial)
+                    / CLOCKS_PER_SEC << "s" << endl;
         
         return 0;
     } else
